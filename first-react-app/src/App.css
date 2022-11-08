@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.bio {
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: calc(10px + 2vmin);
+  color: pink;
+}
+
