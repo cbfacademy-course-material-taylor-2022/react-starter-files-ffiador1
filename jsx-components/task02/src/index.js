@@ -7,8 +7,8 @@ import Profile from './Profile';
 function App() {
   return (
       //Replace the string below with the JSX Profile component
-      <Profile name="Flo" bio="Using functional components">
-      </Profile>
+      <Profile name="Flo" bio="Using functional components"/>
+     
   );
 }
 
