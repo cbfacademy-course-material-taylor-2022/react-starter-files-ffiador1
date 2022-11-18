@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TaskContainer from './components/TaskContainer';
 import Task from './components/Task';
@@ -13,12 +13,23 @@ const taskList = [
 ];
 
 
+
+
+
+
 function App() {
   
   
     function toggleComplete(id){
+      setTasks(taskList.map(task => {
+        if (task.id === id){
+          task.isComplete = !task.isComplete;
+        }
+        return task;
+      }))
       console.log(`Task with the id '${id}' was clicked`);
     }
+    const [tasks, setTasks] = useState(taskList);
    return (
     
       <Fragment>
