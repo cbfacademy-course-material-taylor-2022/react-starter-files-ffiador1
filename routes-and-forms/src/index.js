@@ -1,6 +1,7 @@
 import {React} from "react";
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import PetForm from './components/PetForm';
 
 export default function App() {
   return (
@@ -22,9 +23,13 @@ export default function App() {
 }
 
 function Home() {
+  const animals = ["Elephants", "Ants", "Lizards", "Goats"];
+  const [pet1, pet2] = animals; // {clare}'s
+
   return <>
           <h1>All Pets</h1>
-          <section>This is the page for all your pet needs</section>
+          <PetForm/>
+          <section>This is the page for all your {pet2} needs</section>
           <img src="imgs/kitten.jpg" alt="Kitten"/>
           <img src="imgs/puppy.jpg" alt="Puppy"/>
           <img src="imgs/duckling.jpg" alt="Duckling"/>
