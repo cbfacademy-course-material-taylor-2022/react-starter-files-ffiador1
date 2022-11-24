@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
  import Book from './components/Book';
+
  import BookList from './components/BookList';
  import data from './models/books.json';
-
+import Search from './Search';
 
  const App = (props) => {
  const [books] = useState(data);
  
  return books.map(book => 
  <> 
-  <BookList >{
-    <Book book={book} />
-    }
-  </BookList>
+  <Search/> <br/>
+  { <Book key={book.id} book={book}/>}
+
+  
  </>
  ); 
 
