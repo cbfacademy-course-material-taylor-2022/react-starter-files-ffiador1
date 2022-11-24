@@ -14,10 +14,22 @@ function Book({book:{ id,
     <img src={thumbnail} alt={title}/>
      <div>
      <h2 title={title}>{title}</h2>
-     {retailPrice && <p>£{retailPrice.amount}</p>}
+     
+     {retailPrice && <p>
+       <button onClick={() =>addBook(title)}>"Add +"</button>
+       {" "}£{retailPrice.amount}
+       </p>}
      {authors && <p>{authors.join(', ')}</p>}
      {description && <p>{description}</p>}
      </div>
     </div>);
 }
-export default Book;
+
+function addBook(title) {
+  console.log(`The Book'${title}' was clicked`);
+  }
+ 
+export default Book; 
+
+
+
