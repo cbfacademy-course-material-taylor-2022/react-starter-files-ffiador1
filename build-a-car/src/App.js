@@ -12,7 +12,7 @@ function App() {
       <Car numberOfWheels="4"/>
       <Bicycle numberOfWheels="2"/>
       <Bus numberOfWheels="4" />
-      <Truck numberOfWheels="4"/>
+      <Truck numberOfWheels="8"/>
       <Skateboard numberOfWheels="2"/>
     </div>
   );
