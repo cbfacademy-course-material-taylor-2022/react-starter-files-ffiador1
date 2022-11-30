@@ -1,10 +1,13 @@
 import React from 'react'
-import Wheels from './Wheel'
+import Wheel from './Wheel'
 
 export default function Bicycle(props) {
+    let wheels = [];
+    for (let i=0; i<props.numberOfWheels; i++){
+        wheels.push(<Wheel key={i}/>)
+    }
  return <>
     <h2>Good morning, I am a Bicycle! I have {''}{props.numberOfWheels} wheels</h2>
-    <Wheels/>
-    <Wheels/>
+    {wheels}
 </>
 }
