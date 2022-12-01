@@ -25,9 +25,9 @@ import Search from './Search';
 
  return <> 
 
-  <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/> <br/>
-  { books.map(book => <Book key={book.id} book={book}/>)}
- 
+    <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/> <br/>
+  
+    <BookList books={books}></BookList>
  </>; 
 
  }
