@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Book from './components/Book';
 // import PropTypes from 'prop-types';
 import BookList from './components/BookList';
 import data from './models/books.json';
 import Search from './Search';
+import Header from './components/Header';
+import About from './pages/About';
 
  const App = () => {
 
@@ -17,21 +20,39 @@ import Search from './Search';
      if (!results.error) {
      setBooks(results.items);
      }
-    }
-   
-//  function addBook(title) {
-      // console.log(`The Book'${title}' was clicked`);
-      // }
+    }   
 
- return <> 
+return <> 
+   <BrowserRouter>
+      <Routes>
+         <Route exact path="/" element={<Home findBooks={findBooks} 
+            books={books} 
+            keyword={keyword} 
+            setKeyword={setKeyword}/>} />
 
-    <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/> <br/>
-  
-    <BookList books={books}></BookList>
- </>; 
+         <Route exact path="/bookcase" element={<BookCase books={books} 
+            />} />
+         <Route exact path="/about" element={<><Header/><About/> </>} />
+      </Routes>
+   </BrowserRouter>
+    </>; 
 
  }
-
+function Home (props){
+   return <>
+   <Header/>
+   <h2>Welcome to the Bookcase App</h2>
+   <Search findBooks={props.findBooks} keyword={props.keyword} setKeyword={props.setKeyword}/> <br/>
+   <BookList books={props.books}/>
+</>
+}
+function BookCase (props){
+   return  <>
+   <Header/>
+   <h2>Welcome to the Bookcase App</h2>
+   <BookList books={props.books}/>
+</>
+}
  
 export default App;
 

@@ -13,7 +13,7 @@ return <form onSubmit = {handleSubmit}>
     <input type="text" 
         value={keyword} 
         onChange={(e) =>setKeyword(e.target.value)}/>
-    <input type="submit" value="Check-in" id="submit-button"/>
+    <input type="submit" value="Search" id="submit-button"/>
 
 
 
